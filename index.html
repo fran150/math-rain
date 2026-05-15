@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Rain</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game" aria-label="Math Rain game">
+        <canvas id="game-canvas"></canvas>
+
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Math Rain</p>
+            <h1 id="level-title">Warm-up</h1>
+          </div>
+          <div class="stats" aria-label="Game stats">
+            <span class="score-stat"><strong id="score">0</strong> score</span>
+            <span class="streak-stat"><strong id="streak">0</strong> streak</span>
+            <span><strong id="solved">0</strong>/<b id="goal">12</b></span>
+            <span><strong id="speed">1.0x</strong> speed</span>
+          </div>
+        </div>
+
+        <div class="answer-panel" aria-live="polite">
+          <span class="answer-label">Type answer</span>
+          <strong id="answer-buffer">...</strong>
+        </div>
+
+        <div class="overlay is-visible" id="overlay">
+          <div class="dialog">
+            <div class="brand-lockup" aria-hidden="true">
+              <div class="brand-mark">
+                <span class="rain-tile tile-a">6x2</span>
+                <span class="rain-tile tile-b">9+4</span>
+                <span class="rain-tile tile-c">3x5</span>
+                <span class="rain-cloud"></span>
+                <span class="rain-splash"></span>
+              </div>
+              <p class="eyebrow">Math Rain</p>
+            </div>
+            <h2 id="overlay-title">Math Rain</h2>
+            <p id="overlay-copy">
+              Choose a starting challenge, type answers directly, and clear the
+              falling equations before they stack too high.
+            </p>
+            <label class="name-field">
+              <span>Player name</span>
+              <input
+                id="player-name"
+                type="text"
+                maxlength="16"
+                autocomplete="nickname"
+                placeholder="Player"
+              />
+            </label>
+            <div class="button-row">
+              <button id="start-adventure" type="button">Start</button>
+              <button id="start-calm" type="button">Calm practice</button>
+            </div>
+            <div class="level-picker" id="level-picker" aria-label="Choose level"></div>
+            <section class="records" aria-label="Saved scores">
+              <div class="records-header">
+                <h3>Records</h3>
+                <button id="clear-records" type="button">Clear</button>
+              </div>
+              <ol id="records-list"></ol>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
